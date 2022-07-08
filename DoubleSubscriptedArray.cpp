@@ -52,6 +52,10 @@ doubleSubscriptedArray :: doubleSubscriptedArray (const doubleSubscriptedArray& 
 //destructor
 doubleSubscriptedArray::~doubleSubscriptedArray()
 {
+    for(int i = 0; i < row; i++)
+    {
+        delete ptr[i];
+    }
     delete[] ptr;  //release pointer-based array space
     ptr = nullptr;  //set to nullptr
 }
